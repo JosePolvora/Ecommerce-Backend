@@ -37,3 +37,10 @@ Es una pagina web que permite a los usuarios realizar pedidos de bebidas y produ
 
 # 5- Crear el backend (api) - completo con modelos - relaciones - rutas y controladores para dar soporte a la APP a construir.
 https://github.com/JosePolvora/Ecommerce-Backend.git
+
+# 6- Hacer testing de cada endpoint utilizando Thunder, asegurarse que todo funciona correctamente.
+ - Ejemplos:
+![usuarios](https://github.com/user-attachments/assets/06d89329-7d50-4df2-8633-86321937b058)
+![productos](https://github.com/user-attachments/assets/a22f7bd1-5a3c-4892-97dc-056ca3bc685e)
+![clientes](https://github.com/user-attachments/assets/d192cf94-d559-425b-b34d-2789f566ddff)
+
