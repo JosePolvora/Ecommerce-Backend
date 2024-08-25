@@ -22,3 +22,12 @@ Es una pagina web que permite a los usuarios realizar pedidos de bebidas y produ
 # 2- Creación del DER (base de datos) de todo el sistema propuesto.
 ![AGOSTO_DER_FINAL](https://github.com/user-attachments/assets/6187585c-12a1-459d-acfd-6ced9c89d965)
 
+# 3- Acotar el sistema completo, indicando que funcionalidades se incluirán para la entrega del trabajo final de esta materia.
+
+ - Registro e Inicio de Sesión de Usuarios.
+ - Navegación de Menú.
+ - Selección de Productos.
+ - Carrito de Compras.
+ - Pago en Línea.
+ - Ofertas y Promociones.
+ - Soporte Multidispositivo.
