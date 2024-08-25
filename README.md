@@ -31,3 +31,8 @@ Es una pagina web que permite a los usuarios realizar pedidos de bebidas y produ
  - Pago en Línea.
  - Ofertas y Promociones.
  - Soporte Multidispositivo.
+
+# 4- Crear un nuevo DER que incluya los modelos que se necesitan según lo indicado en el punto 3 (el resto de tablas no se utilizaran este año)
+![AGOSTO_DER_SIMPLIFICADO](https://github.com/user-attachments/assets/66b4927c-b96c-415a-8b01-864079615462)
+
+# 5- Crear el backend (api) - completo con modelos - relaciones - rutas y controladores para dar soporte a la APP a construir.
