@@ -40,7 +40,6 @@ app.use("/api", envioRouter);
 const imagenRouter = require("./router/imagen.router");
 app.use("/api", imagenRouter);
 
-
 const localidadRouter = require("./router/localidad.router");
 app.use("/api", localidadRouter);
 
