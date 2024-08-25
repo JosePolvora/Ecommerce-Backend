@@ -1,14 +1,12 @@
-1- Definición de objetivo de tu trabajo final.
+# 1- Definición de objetivo de tu trabajo final.
 ¿para que servirá tu app?
 
 Es una pagina web que permite a los usuarios realizar pedidos de bebidas y productos de bares y restaurantes desde la pagina web y tambien sus dispositivos móviles. La app facilita el proceso de selección, personalización, y pago de los pedidos, ofreciendo una experiencia cómoda y rápida para disfrutar de sus productos sin esperas innecesarias.
 ¿que funcionalidades tendrá?
 
 	
-  Registro e Inicio de Sesión de Usuarios: permitir a los usuarios crear una cuenta con sus datos básicos y poder logearse.
-
-
-  Navegación de Menú: visualización de los productos disponibles, organizados por categorías (bebidas, comidas, postres, etc.).
+ - Registro e Inicio de Sesión de Usuarios: permitir a los usuarios crear una cuenta con sus datos básicos y poder logearse.
+ - Navegación de Menú: visualización de los productos disponibles, organizados por categorías (bebidas, comidas, postres, etc.).
 
   Selección de Productos: los usuarios pueden explorar el menu y seleccionar bebidas y alimentos disponibles.
 
