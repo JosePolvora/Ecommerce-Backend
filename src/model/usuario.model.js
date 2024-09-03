@@ -20,21 +20,30 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: true
             },
 
-            correo: {
+            email: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                
             },
 
-            password: {
+            clave: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
 
-            rol: {
-                type: DataTypes.STRING,
-                allowNull: true
+            fechaNacimiento: {
+                type: DataTypes.DATE,
+                allowNull: false
             },
+
+            dni: {
+                type: DataTypes.INTEGER,
+                allowNull: false
+            },
+
+            // rol: {
+            //     type: DataTypes.STRING,
+            //     allowNull: true
+            // },
 
         });
 
