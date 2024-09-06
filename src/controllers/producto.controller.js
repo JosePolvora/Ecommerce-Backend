@@ -10,6 +10,7 @@ async function createProducto(req, res) {
                 precio: dataProductos.precio,                
                 descripcion: dataProductos.descripcion,
                 imagen: dataProductos.imagen,
+                disponible: dataProductos.disponible,
             });
 
         res.status(201).json({
@@ -78,6 +79,7 @@ async function updateProducto(req, res) {
                 precio: dataProductos.precio,
                 descripcion: dataProductos.descripcion,
                 imagen: dataProductos.imagen,
+                disponible: dataProductos.disponible,
             },
             {
                 where: { producto_id: id },

@@ -30,6 +30,12 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: true
             },
 
+            disponible: {
+                type: DataTypes.BOOLEAN,
+                allowNull: true
+            },
+
+
         });
 
     return Producto
