@@ -6,6 +6,8 @@ async function createProductoxcategoria(req, res) {
     try {
         const crearProductoxcategoria = await db.Productoxcategoria.create(
             {
+                producto_id: dataProductoxcategoria.producto_id,
+                categoria_id: dataProductoxcategoria.categoria_id,
                 estado: dataProductoxcategoria.estado,
             });
 
@@ -27,7 +29,20 @@ async function createProductoxcategoria(req, res) {
 
 async function getProductoxcategorias(req, res) {
     try {
-        const productoxcategorias = await db.Productoxcategoria.findAll();
+        const productoxcategorias = await db.Productoxcategoria.findAll({
+            include: [
+                {
+                    model: db.Producto,
+                    attributes: ['imagen', 'nombre', 'precio', "descripcion", "disponible"]
+                },
+                {
+                    model: db.Categoria,
+                    attributes: ['nombre', "descripcion", "estado"]
+                }
+            ]
+        });
+
+
         res.status(200).json({
             ok: true,
             status: 200,
@@ -65,7 +80,6 @@ async function getProductoxcategoriaById(req, res) {
         });
     }
 }
-
 
 async function updateProductoxcategoria(req, res) {
     const id = req.params.id;

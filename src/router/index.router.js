@@ -27,6 +27,9 @@ router.use("/", imagenRouter);
 const localidadRouter = require("./localidad.router");
 router.use("/", localidadRouter);
 
+const mensajeRouter = require("./mensaje.router");
+router.use("/", mensajeRouter);
+
 const productoRouter = require("./producto.router");
 router.use("/", productoRouter);
 
@@ -41,5 +44,6 @@ router.use("/", usuarioRouter);
 
 const ventaRouter = require("./venta.router");
 router.use("/", ventaRouter);
+
 
 module.exports = router;

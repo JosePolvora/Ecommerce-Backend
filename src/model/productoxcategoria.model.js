@@ -1,6 +1,5 @@
 const { DataTypes } = require("sequelize");
 
-
 module.exports = (sequelize, Sequelize) => {
     const Productoxcategoria = sequelize.define("productoxcategoria",
         {
@@ -14,9 +13,7 @@ module.exports = (sequelize, Sequelize) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
-
         });
 
-    return Productoxcategoria
-
+    return Productoxcategoria;
 }

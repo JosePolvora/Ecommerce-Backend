@@ -18,13 +18,18 @@ db.Domicilio = require("./domicilio.model.js")(sequelize, Sequelize);
 db.Envio = require("./envio.model.js")(sequelize, Sequelize);
 db.Imagen = require("./imagen.model.js")(sequelize, Sequelize);
 db.Localidad = require("./localidad.model.js")(sequelize, Sequelize);
+db.Mensaje = require("./mensaje.model.js")(sequelize, Sequelize);
 db.Producto = require("./producto.model.js")(sequelize, Sequelize);
 db.Productoxcategoria = require("./productoxcategoria.model.js")(sequelize, Sequelize);
 db.Provincia = require("./provincia.model.js")(sequelize, Sequelize);
 db.Usuario = require("./usuario.model.js")(sequelize, Sequelize);
 db.Venta = require("./venta.model.js")(sequelize, Sequelize);
 
-
+// relacion 1 a muchos
+// un producto puede tener muchas imagenes
+db.Producto.hasMany(db.Imagen);
+// una imagen pertenece a un solo producto
+db.Imagen.belongsTo(db.Producto);
 
 // relacion 1 a muchos
 // una provincia puede tener muchas localidades
@@ -80,19 +85,21 @@ db.Carrito.hasMany(db.Venta);
 
 // relaciones muchos a muchos
 
-// un producto puede tener muchos productoxcategoria
+// Un producto puede tener muchos productoxcategoria
 db.Producto.hasMany(db.Productoxcategoria);
+db.Productoxcategoria.belongsTo(db.Producto);
 
-// una categoria puede tener muchos productoxcategoria
+// Una categoría puede tener muchos productoxcategoria
 db.Categoria.hasMany(db.Productoxcategoria);
-
-// un producto puede tener muchas categoriaxproducto
-db.Producto.hasMany(db.Carritoxproducto);
+db.Productoxcategoria.belongsTo(db.Categoria);
 
 // una carrito puede tener muchas categoriaxproducto
 db.Carrito.hasMany(db.Carritoxproducto);
+db.Carritoxproducto.belongsTo(db.Carrito);
 
-
+// un producto puede tener muchas categoriaxproducto
+db.Producto.hasMany(db.Carritoxproducto);
+db.Carritoxproducto.belongsTo(db.Producto);
 
 module.exports = db;
 

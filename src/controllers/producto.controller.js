@@ -1,23 +1,32 @@
+const { Model } = require("sequelize");
 const db = require("../model/index.model");
 
 async function createProducto(req, res) {
     const dataProductos = req.body;
 
     try {
-        const crearProducto = await db.Producto.create(
+        const NuevoProducto = await db.Producto.create(
             {
                 nombre: dataProductos.nombre,
-                precio: dataProductos.precio,                
+                precio: dataProductos.precio,
                 descripcion: dataProductos.descripcion,
                 imagen: dataProductos.imagen,
                 disponible: dataProductos.disponible,
             });
+        // console.log(NuevoProducto);
+        //console.log(dataProductos);
+        const crearProductoxcategoria = await db.Productoxcategoria.create(
+            {
+                productoProductoId: NuevoProducto.producto_id,
+                categoriaCategoriaId: dataProductos.categoria,
+            });
+
 
         res.status(201).json({
             ok: true,
             status: 201,
             message: "Producto Creado",
-            mensaje: crearProducto,
+            mensaje: NuevoProducto,
         });
     } catch (error) {
         res.status(500).json({
@@ -36,6 +45,38 @@ async function getProductos(req, res) {
             status: 200,
             body: productos,
         });
+
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            status: 500,
+            message: error.message,
+        });
+    }
+}
+
+async function getProductoByCategoria(req, res) {
+    const id = req.params.id;
+    try {
+        const productos = await db.Productoxcategoria.findAll(
+            {
+                include: [
+                    {
+                        model:db.Producto,
+                        
+                    }
+
+                ],
+                where: { categoriaCategoriaId: id },
+            }
+        );
+    
+        res.status(200).json({
+            ok: true,
+            status: 200,
+            body: productos,
+        });
+
     } catch (error) {
         res.status(500).json({
             ok: false,
@@ -66,7 +107,6 @@ async function getProductoById(req, res) {
         });
     }
 }
-
 
 async function updateProducto(req, res) {
     const id = req.params.id;
@@ -128,4 +168,5 @@ module.exports = {
     getProductoById,
     updateProducto,
     deleteProducto,
+    getProductoByCategoria,
 };

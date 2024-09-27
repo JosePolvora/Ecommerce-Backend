@@ -6,7 +6,9 @@ async function createCategoria(req, res) {
     try {
         const crearCategoria = await db.Categoria.create(
             {
+                nombre: dataCategorias.nombre,
                 descripcion: dataCategorias.descripcion,
+                estado: dataCategorias.estado,
                 
             });
 
@@ -74,7 +76,9 @@ async function updateCategoria(req, res) {
     try {
         const actualizaCategoria = await db.Categoria.update(
             {
+                nombre: dataCategorias.nombre,
                 descripcion: dataCategorias.descripcion,
+                estado: dataCategorias.estado,
               
             },
             {

@@ -1,5 +1,6 @@
 const db = require("../model/index.model");
 
+
 async function createUsuario(req, res) {
     const dataUsuarios = req.body;
 
@@ -8,13 +9,12 @@ async function createUsuario(req, res) {
             {
                 nombre: dataUsuarios.nombre,
                 apellido: dataUsuarios.apellido,
-                // correo: dataUsuarios.correo,
                 email: dataUsuarios.email,
-                // password: dataUsuarios.password,
                 clave: dataUsuarios.clave,
-                // rol: dataUsuarios.rol,
+                rol: dataUsuarios.rol,
                 fechaNacimiento: dataUsuarios.fechaNacimiento,
                 dni: dataUsuarios.dni,
+                activo: dataUsuarios.activo,
             });
 
         res.status(201).json({
@@ -62,7 +62,7 @@ async function getUsuarioById(req, res) {
             status: 200,
             body: usuario,
         });
-        
+
     } catch (error) {
         res.status(500).json({
             ok: false,
@@ -71,7 +71,6 @@ async function getUsuarioById(req, res) {
         });
     }
 }
-
 
 async function updateUsuario(req, res) {
     const id = req.params.id;
@@ -82,13 +81,12 @@ async function updateUsuario(req, res) {
             {
                 nombre: dataUsuarios.nombre,
                 apellido: dataUsuarios.apellido,
-                // correo: dataUsuarios.correo,
                 email: dataUsuarios.email,
-                // password: dataUsuarios.password,
                 clave: dataUsuarios.clave,
-                // rol: dataUsuarios.rol,
+                rol: dataUsuarios.rol,
                 fechaNacimiento: dataUsuarios.fechaNacimiento,
                 dni: dataUsuarios.dni,
+                activo: dataUsuarios.activo,
             },
             {
                 where: { usuario_id: id },

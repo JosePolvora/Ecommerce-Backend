@@ -22,7 +22,7 @@ module.exports = (sequelize, Sequelize) => {
 
             email: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: false
             },
 
             clave: {
@@ -40,10 +40,15 @@ module.exports = (sequelize, Sequelize) => {
                 allowNull: false
             },
 
-            // rol: {
-            //     type: DataTypes.STRING,
-            //     allowNull: true
-            // },
+            rol: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+
+            activo: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
 
         });
 
