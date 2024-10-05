@@ -1,12 +1,10 @@
 const sequelize = require('../config/app.config.js');
 const { Sequelize } = require('sequelize');
 
-
 const db = {}
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-
 
 // Definiciones de modelos
 
@@ -102,8 +100,3 @@ db.Producto.hasMany(db.Carritoxproducto);
 db.Carritoxproducto.belongsTo(db.Producto);
 
 module.exports = db;
-
-
-
-
-

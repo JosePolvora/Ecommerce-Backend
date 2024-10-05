@@ -33,7 +33,7 @@ async function getProductoxcategorias(req, res) {
             include: [
                 {
                     model: db.Producto,
-                    attributes: ['imagen', 'nombre', 'precio', "descripcion", "disponible"]
+                    attributes: ['nombre', 'precio', "descripcion","imagen", "disponible"]
                 },
                 {
                     model: db.Categoria,

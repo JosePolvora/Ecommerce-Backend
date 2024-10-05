@@ -63,7 +63,6 @@ async function getProductoByCategoria(req, res) {
                 include: [
                     {
                         model:db.Producto,
-                        
                     }
 
                 ],

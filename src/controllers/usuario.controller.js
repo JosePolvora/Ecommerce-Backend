@@ -1,6 +1,5 @@
 const db = require("../model/index.model");
 
-
 async function createUsuario(req, res) {
     const dataUsuarios = req.body;
 
