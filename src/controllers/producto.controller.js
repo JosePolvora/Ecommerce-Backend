@@ -62,14 +62,14 @@ async function getProductoByCategoria(req, res) {
             {
                 include: [
                     {
-                        model:db.Producto,
+                        model: db.Producto,
                     }
 
                 ],
                 where: { categoriaCategoriaId: id },
             }
         );
-    
+
         res.status(200).json({
             ok: true,
             status: 200,
@@ -106,6 +106,37 @@ async function getProductoById(req, res) {
         });
     }
 }
+
+async function getListaProductos(req, res) {
+    const pagina = parseInt(req.query.pagina) || 1;
+    const cantidad = parseInt(req.query.cantidad) || 8;
+
+    try {
+        const productos = await db.Producto.findAndCountAll({
+            offset: (pagina - 1) * cantidad,
+            limit: cantidad,
+        });
+
+        res.status(200).json({
+            ok: true,
+            status: 200,
+            totalRegistros: productos.count,
+            totalPaginas: Math.ceil(productos.count / cantidad),
+            paginaActual: pagina,
+            body: productos.rows,
+        });
+
+    } catch (error) {
+        console.error("Error al obtener el listado de productos:", error.message);
+        res.status(500).json({
+            ok: false,
+            msg: "Error al obtener el listado de productos",
+            status: 500,
+            error: error.message,
+        });
+    }
+}
+
 
 async function updateProducto(req, res) {
     const id = req.params.id;
@@ -168,4 +199,5 @@ module.exports = {
     updateProducto,
     deleteProducto,
     getProductoByCategoria,
+    getListaProductos,
 };
