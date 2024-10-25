@@ -29,6 +29,20 @@ module.exports = (sequelize, Sequelize) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
+            imagenUno: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            imagenDos: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+            imagenTres: {
+                type: DataTypes.STRING,
+                allowNull: true
+            },
+
+
 
             disponible: {
                 type: DataTypes.BOOLEAN,

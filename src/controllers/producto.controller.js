@@ -11,6 +11,9 @@ async function createProducto(req, res) {
                 precio: dataProductos.precio,
                 descripcion: dataProductos.descripcion,
                 imagen: dataProductos.imagen,
+                imagenUno: dataProductos.imagenUno,
+                imagenDos: dataProductos.imagenDos,
+                imagenTres: dataProductos.imagenTres,
                 disponible: dataProductos.disponible,
             });
         // console.log(NuevoProducto);
@@ -149,6 +152,9 @@ async function updateProducto(req, res) {
                 precio: dataProductos.precio,
                 descripcion: dataProductos.descripcion,
                 imagen: dataProductos.imagen,
+                imagenUno: dataProductos.imagenUno,
+                imagenDos: dataProductos.imagenDos,
+                imagenTres: dataProductos.imagenTres,
                 disponible: dataProductos.disponible,
             },
             {
