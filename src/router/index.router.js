@@ -45,5 +45,8 @@ router.use("/", usuarioRouter);
 const ventaRouter = require("./venta.router");
 router.use("/", ventaRouter);
 
+const authRouter = require("./auth.router");
+router.use("/", authRouter);
+
 
 module.exports = router;

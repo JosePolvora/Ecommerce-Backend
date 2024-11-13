@@ -1,4 +1,5 @@
 const db = require("../model/index.model");
+//const bcrypt = require('bcrypt');
 
 async function createUsuario(req, res) {
     const dataUsuarios = req.body;
@@ -131,10 +132,48 @@ async function deleteUsuario(req, res) {
     }
 }
 
+
+async function loginUsuario(req, res) {
+    const { email, clave } = req.body;
+
+    try {
+        const usuario = await db.Usuario.findOne({ where: { email } });
+
+        // Verificar si el usuario existe y si la clave coincide
+        if (!usuario || usuario.clave !== clave) {
+            return res.status(401).json({
+                ok: false,
+                message: "Credenciales incorrectas"
+            });
+        }
+
+        // Si las credenciales son correctas
+        res.status(200).json({
+            ok: true,
+            message: "Inicio de sesión exitoso",
+            usuario: {
+                id: usuario.usuario_id,
+                nombre: usuario.nombre,
+                email: usuario.email,
+                rol: usuario.rol
+            }
+        });
+
+    } catch (error) {
+        // Manejo de errores
+        res.status(500).json({
+            ok: false,
+            message: error.message
+        });
+    }
+}
+
+
 module.exports = {
     createUsuario,
     getUsuarios,
     getUsuarioById,
     updateUsuario,
     deleteUsuario,
+    loginUsuario,
 };
