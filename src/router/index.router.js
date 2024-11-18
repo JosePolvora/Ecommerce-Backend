@@ -48,5 +48,8 @@ router.use("/", ventaRouter);
 const authRouter = require("./auth.router");
 router.use("/", authRouter);
 
+const cuponRouter = require("./cupon.router");
+router.use("/", cuponRouter);
+
 
 module.exports = router;

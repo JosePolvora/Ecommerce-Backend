@@ -42,7 +42,8 @@ module.exports = (sequelize, Sequelize) => {
 
             rol: {
                 type: DataTypes.STRING,
-                allowNull: true
+                allowNull: true,
+                defaultValue: ''
             },
 
             activo: {
