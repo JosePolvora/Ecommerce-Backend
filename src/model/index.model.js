@@ -23,6 +23,8 @@ db.Provincia = require("./provincia.model.js")(sequelize, Sequelize);
 db.Usuario = require("./usuario.model.js")(sequelize, Sequelize);
 db.Venta = require("./venta.model.js")(sequelize, Sequelize);
 db.Cupon = require("./cupon.model.js")(sequelize, Sequelize);
+db.Comentario = require("./comentario.model.js")(sequelize, Sequelize);
+
 
 // relacion 1 a muchos
 // un producto puede tener muchas imagenes

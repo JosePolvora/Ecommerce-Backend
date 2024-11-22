@@ -24,6 +24,15 @@ module.exports = (sequelize, Sequelize) => {
                 type: DataTypes.STRING,
                 allowNull: true
             },
+            caracteristicas: {
+                type: DataTypes.TEXT,
+                allowNull: true
+            },
+            especificaciones: {
+                type: DataTypes.TEXT,
+                allowNull: true
+            },
+
 
             imagen: {
                 type: DataTypes.STRING,
